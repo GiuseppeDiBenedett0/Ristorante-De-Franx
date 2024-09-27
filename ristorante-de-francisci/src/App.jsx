@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+import styled, { createGlobalStyle } from "styled-components";
+import NavbarComponent from "./components/navbar";
+import HomeMainComponent from "./components/main-page-components/homeMain";
+import FooterComponent from "./footer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import OurStoryComponent from "./components/our-story-component/our-story";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const GlobalSettings = createGlobalStyle`
+
+ body{
+  background-color: #e7e6e6;
+ }
+ 
+ `;
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <GlobalSettings />
+      <Router>
+        <NavbarComponent />
+        <Routes>
+          <Route path="/" element={<HomeMainComponent />} />
+          <Route path="/la-nostra-storia" element={<OurStoryComponent />} />
+        </Routes>
+        <FooterComponent />
+      </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
