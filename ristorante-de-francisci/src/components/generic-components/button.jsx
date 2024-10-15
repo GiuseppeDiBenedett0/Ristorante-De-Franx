@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import { theme } from "../../style/theme";
 
 const CustomButton = styled(Button)`
@@ -10,6 +11,7 @@ const CustomButton = styled(Button)`
     width: ${({ width }) => width || "30%"};
     background-color: ${theme.colors.secondary};
     border-color: transparent;
+    margin: ${({ margin }) => margin || "0"};
   }
 
   &&:hover {
@@ -34,12 +36,14 @@ const CustomButton = styled(Button)`
   }
 `;
 
-function ButtonComponent({ buttonText, width, fontSize }) {
+function ButtonComponent({ buttonText, to, width, margin, fontSize }) {
   return (
     <>
-      <CustomButton width={width} fontSize={fontSize}>
-        {buttonText}
-      </CustomButton>
+      <Link to={to}>
+        <CustomButton width={width} fontSize={fontSize} margin={margin}>
+          {buttonText}
+        </CustomButton>
+      </Link>
     </>
   );
 }

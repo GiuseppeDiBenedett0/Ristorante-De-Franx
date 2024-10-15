@@ -29,7 +29,7 @@ const CustomContainer = styled(Container)`
 
 const CustomNavLink = styled(Nav.Link)`
   color: ${theme.colors.text};
-  border: none;
+  text-decoration: none;
 
   &:hover {
     color: ${theme.colors.secondary};
@@ -85,7 +85,7 @@ function NavbarComponent() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <CustomNavLink className="px-4 py-3" as={Link} to="/">Home</CustomNavLink>
+            <CustomNavLink className="px-4 py-3" as={Link} to="/home">Home</CustomNavLink>
             <CustomNavLink className="px-4 py-3" as={Link} to="/la-nostra-storia">La nostra storia</CustomNavLink>
             <CustomNavDropdown className="px-4 py-3"  title="I nostri piatti" id="basic-nav-dropdown">
               <CustomDropdownItem href="#action/3.1">

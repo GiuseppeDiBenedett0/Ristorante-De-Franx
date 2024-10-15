@@ -1,18 +1,27 @@
 import styled from "styled-components";
-import headerImage1 from "../../assets/negley-stockman-w7i5Jt7W9T0-unsplash.jpg";
 import { theme } from "../../style/theme";
 import { fadeInImage } from "../../style/animation";
 import { fadeIn } from "../../style/animation";
 import { useEffect, useState } from "react";
 
-const image = headerImage1;
-
 const HeaderContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: ${({ $heightVh }) => $heightVh || "80vh"};
   overflow: hidden;
   border-bottom: 2px solid ${theme.colors.secondary};
+
+  @media (max-width: 1150px) {
+    margin-bottom: 130px;
+  }
+
+  @media (max-width: 757px) {
+    margin-bottom: 160px;
+  }
+
+  @media (max-width: 553px) {
+    margin-bottom: 200px;
+  }
 `;
 
 const HeaderImage = styled.img`
@@ -45,6 +54,10 @@ const HeaderTitle = styled.h1`
   text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black,
     -1px 1px 0 black;
 
+    @media (max-width: 1030px) {
+    font-size: 4rem;
+  }
+
   @media (max-width: 972px) {
     font-size: 3.7rem;
   }
@@ -62,6 +75,7 @@ const HeaderTitle = styled.h1`
 const HeaderSubTitle = styled.h3`
   font-family: "Playfair Display", sans-serif;
   font-size: 2.2rem;
+  font-style: italic;
   position: absolute;
   top: 55%;
   left: 50%;
@@ -135,7 +149,19 @@ const SubHeaderP = styled.p`
   }
 `;
 
-function HeaderComponent() {
+function HeaderComponent({
+  heightVh,
+  src,
+  alt,
+  title,
+  titleBr,
+  subTitle,
+  subTitleBr,
+  paragraph,
+  showSubContainer = true,
+}) {
+
+  //Regolazione della posizione del titolo e sottotitolo in base alla grandezza dello schermo.
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   let resizeTimeout;
@@ -158,20 +184,21 @@ function HeaderComponent() {
 
   return (
     <>
-      <HeaderContainer>
-        <HeaderImage src={image} alt="Tavoltata elegante" />
-        <HeaderTitle>La Pirri {isSmallScreen && <br />} gentile</HeaderTitle>
+      <HeaderContainer heightVh={heightVh}>
+        <HeaderImage src={src} alt={alt} />
+        <HeaderTitle>
+          {title} {isSmallScreen && <br />} {titleBr}
+        </HeaderTitle>
         <HeaderSubTitle>
-          Solo il meglio{isSmallScreen && <br />} per i capitani di domani
+          {subTitle}
+          {isSmallScreen && <br />} {subTitleBr}
         </HeaderSubTitle>
       </HeaderContainer>
-      <HeaderSubContainer>
-        <SubHeaderP>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sit
-          dolor iure doloribus earum. Officiis porro ipsa reiciendis dolor
-          nesciunt, sint minima aspernatur.
-        </SubHeaderP>
-      </HeaderSubContainer>
+      {showSubContainer && (
+        <HeaderSubContainer>
+          <SubHeaderP>{paragraph}</SubHeaderP>
+        </HeaderSubContainer>
+      )}
     </>
   );
 }
