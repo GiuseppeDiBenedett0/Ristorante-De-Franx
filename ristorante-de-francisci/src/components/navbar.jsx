@@ -69,8 +69,11 @@ const CustomNavDropdown = styled(NavDropdown)`
 `;
 
 const CustomDropdownItem = styled(NavDropdown.Item)`
+  display: flex;
+  flex-direction: column;
   padding: 16px;
   color: ${theme.colors.text};
+  text-decoration: none;
 
   &:hover {
     background-color: inherit;
@@ -85,22 +88,43 @@ function NavbarComponent() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <CustomNavLink className="px-4 py-3" as={Link} to="/home">Home</CustomNavLink>
-            <CustomNavLink className="px-4 py-3" as={Link} to="/la-nostra-storia">La nostra storia</CustomNavLink>
-            <CustomNavDropdown className="px-4 py-3"  title="I nostri piatti" id="basic-nav-dropdown">
-              <CustomDropdownItem href="#action/3.1">
+            <CustomNavLink className="px-4 py-3" as={Link} to="/home">
+              Home
+            </CustomNavLink>
+            <CustomNavLink
+              className="px-4 py-3"
+              as={Link}
+              to="/la-nostra-storia"
+            >
+              La nostra storia
+            </CustomNavLink>
+            <CustomNavDropdown
+              className="px-4 py-3"
+              title="I nostri piatti"
+              id="basic-nav-dropdown"
+            >
+              <CustomDropdownItem as={Link} to="/menù#antipasti">
                 Antipasti
               </CustomDropdownItem>
-              <CustomDropdownItem href="#action/3.2">Primi</CustomDropdownItem>
-              <CustomDropdownItem href="#action/3.3">
+              <CustomDropdownItem as={Link} to="/menù#primi">
+                Primi
+              </CustomDropdownItem>
+              <CustomDropdownItem as={Link} to="/menù#secondi">
                 Secondi
               </CustomDropdownItem>
-              <CustomDropdownItem href="#action/3.4">Dolci</CustomDropdownItem>
-              <CustomDropdownItem href="#action/3.3">
+              <CustomDropdownItem as={Link} to="/menù#dolci">
+                Dolci
+              </CustomDropdownItem>
+              <CustomDropdownItem as={Link} to="/menù#bevande">
                 Bevande
               </CustomDropdownItem>
             </CustomNavDropdown>
-            <CustomNavLink className="px-4 py-3" href="#bubas">Contatti</CustomNavLink>
+            <CustomNavLink className="px-4 py-3" as={Link} to="/contacts">
+              Contatti
+            </CustomNavLink>
+            <CustomNavLink className="px-4 py-3" as={Link} to="/add-dish">
+              Aggiungi piatto
+            </CustomNavLink>
           </Nav>
         </Navbar.Collapse>
       </CustomContainer>

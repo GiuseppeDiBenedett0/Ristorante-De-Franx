@@ -9,13 +9,16 @@ const CustomButton = styled(Button)`
     text-transform: uppercase;
     font-weight: 600;
     width: ${({ width }) => width || "30%"};
-    background-color: ${theme.colors.secondary};
+    background-color: ${({ $backgorundColor }) =>
+      $backgorundColor || `${theme.colors.secondary}`};
     border-color: transparent;
     margin: ${({ margin }) => margin || "0"};
+    font-size: ${({ fontSize }) => fontSize || "0.8rem"};
   }
 
   &&:hover {
-    background-color: ${theme.colors.secondary};
+    background-color: ${({ $hoverBackgorundColor }) =>
+      $hoverBackgorundColor || `${theme.colors.secondary}`};
     border-color: transparent;
     color: #0e0e0e;
   }
@@ -26,7 +29,8 @@ const CustomButton = styled(Button)`
   &&.active {
     box-shadow: none !important;
     outline: none;
-    background-color: ${theme.colors.secondary};
+    background-color: ${({ $activeBackgorundColor }) =>
+      $activeBackgorundColor || `${theme.colors.secondary}`};
     border-color: transparent;
     color: #0e0e0e;
   }
@@ -36,14 +40,46 @@ const CustomButton = styled(Button)`
   }
 `;
 
-function ButtonComponent({ buttonText, to, width, margin, fontSize }) {
+function ButtonComponent({
+  buttonText,
+  to,
+  width,
+  margin,
+  fontSize,
+  $backgorundColor,
+  $hoverBackgorundColor,
+  $activeBackgorundColor,
+  onClick,
+}) {
   return (
     <>
-      <Link to={to}>
-        <CustomButton width={width} fontSize={fontSize} margin={margin}>
+      {to ? (
+        <Link to={to}>
+          <CustomButton
+            width={width}
+            fontSize={fontSize}
+            margin={margin}
+            $backgorundColor={$backgorundColor}
+            $hoverBackgorundColor={$hoverBackgorundColor}
+            $activeBackgorundColor={$activeBackgorundColor}
+            
+          >
+            {buttonText}
+          </CustomButton>
+        </Link>
+      ) : (
+        <CustomButton
+          width={width}
+          fontSize={fontSize}
+          margin={margin}
+          $backgorundColor={$backgorundColor}
+          $hoverBackgorundColor={$hoverBackgorundColor}
+          $activeBackgorundColor={$activeBackgorundColor}
+          onClick={onClick}
+        >
           {buttonText}
         </CustomButton>
-      </Link>
+      )}
     </>
   );
 }

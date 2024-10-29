@@ -150,7 +150,7 @@ const SubHeaderP = styled.p`
 `;
 
 function HeaderComponent({
-  heightVh,
+  $heightVh,
   src,
   alt,
   title,
@@ -184,7 +184,7 @@ function HeaderComponent({
 
   return (
     <>
-      <HeaderContainer heightVh={heightVh}>
+      <HeaderContainer $heightVh={$heightVh}>
         <HeaderImage src={src} alt={alt} />
         <HeaderTitle>
           {title} {isSmallScreen && <br />} {titleBr}

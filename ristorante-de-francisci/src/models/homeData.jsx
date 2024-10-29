@@ -36,7 +36,7 @@ const HomeData = [
               laudantium labore officiis laborum amet consequuntur voluptatum
               sequi ullam ratione doloremque blanditiis, odit hic voluptas non!`,
     buttonText: "Visita",
-    buttonLink: "/menu",
+    buttonLink: "/menù",
     images: [
       { src: sectionImage1, alt: "Piatto di pasta", imgWidth: "270px", imgHeight: "180px" },
       { src: sectionImage2, alt: "Piatto di pasta", imgWidth: "270px", imgHeight: "180px" },
