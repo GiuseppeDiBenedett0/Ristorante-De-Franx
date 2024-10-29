@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate  } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../../../style/theme";
 
 function DishForm() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     category: "",
     name: "",
@@ -43,6 +45,7 @@ function DishForm() {
         allergens: [],
         info: "",
       });
+      navigate("/menù");
     } catch (err) {
       console.error("Errore durante l'aggiunta del piatto", err);
     }
