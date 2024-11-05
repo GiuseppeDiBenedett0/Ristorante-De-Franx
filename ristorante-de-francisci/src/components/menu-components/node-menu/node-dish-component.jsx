@@ -103,10 +103,13 @@ const ButtonContainer = styled.div`
 function NodeDishComponent() {
   const [menuData, setMenuData] = useState([]);
 
+  //Cambia il valore a true per attivare la modifica e l'eliminazione del piatto.
+  const admin = true;
+
   useEffect(() => {
     const fetchDishes = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/dish");
+        const response = await axios.get("http://localhost:5000/api/dishes");
         setMenuData(response.data);
       } catch (err) {
         console.error("Errore durante il caricamento dei dati", err);
@@ -128,7 +131,7 @@ function NodeDishComponent() {
   }, {});
 
   const handleDeleteDish = async (id) => {
-    console.log("Eliminazione piatto con id:", id);  // Aggiungi questa linea per verificare
+    console.log("Eliminazione piatto con id:", id); // Aggiungi questa linea per verificare
     try {
       await axios.delete(`http://localhost:5000/api/dish/${id}`);
       setMenuData((prevData) => prevData.filter((dish) => dish.id !== id));
@@ -136,7 +139,6 @@ function NodeDishComponent() {
       console.error("Errore durante l'eliminazione del piatto", err);
     }
   };
-  
 
   return (
     <>
@@ -161,8 +163,8 @@ function NodeDishComponent() {
                       </SvgContainer>
                     )}
                     <DishImage
-                      src={dish.imageSrc}
-                      alt={dish.imageAlt}
+                      src={dish.imgSrc}
+                      alt={dish.imgAlt}
                       $width={"100%"}
                     />
                     <PriceContainer>
@@ -181,23 +183,27 @@ function NodeDishComponent() {
                         to={`/node/menù/${dish.id}`}
                         buttonText={"Info"}
                       />
-                      <ButtonComponent
-                        width={"80px"}
-                        margin={"8px"}
-                        fontSize={"0.8rem"}
-                        to={`/aggiorna-piatto/${dish.id}`}
-                        buttonText={"Cambia"}
-                      />
-                      <ButtonComponent
-                        width={"80px"}
-                        margin={"8px"}
-                        fontSize={"0.8rem"}
-                        $backgorundColor={"#ff3f3f"}
-                        $hoverBackgorundColor={"#ff3f3f"}
-                        $activeBackgorundColor={"#ff3f3f"}
-                        buttonText={"Elimina"}
-                        onClick={() => handleDeleteDish(dish.id)}
-                      />
+                      {admin === true && (
+                        <>
+                          <ButtonComponent
+                            width={"80px"}
+                            margin={"8px"}
+                            fontSize={"0.8rem"}
+                            to={`/edit-piatto/${dish.id}`}
+                            buttonText={"Cambia"}
+                          />
+                          <ButtonComponent
+                            width={"80px"}
+                            margin={"8px"}
+                            fontSize={"0.8rem"}
+                            $backgorundColor={"#ff3f3f"}
+                            $hoverBackgorundColor={"#ff3f3f"}
+                            $activeBackgorundColor={"#ff3f3f"}
+                            buttonText={"Elimina"}
+                            onClick={() => handleDeleteDish(dish.id)}
+                          />
+                        </>
+                      )}
                     </ButtonContainer>
                   </CardBody>
                 </CustomCard>

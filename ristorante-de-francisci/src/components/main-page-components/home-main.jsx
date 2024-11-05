@@ -55,7 +55,7 @@ const WorkCard = styled.div`
   padding: 16px;
 
   @media (max-width: 600px) {
-    width: 400px;
+    width: 312px;
   }
 `;
 
@@ -70,7 +70,7 @@ const CardTitle = styled.h3`
     font-size: 1.7rem;
   }
 
-  @media (max-width: 436px) {
+  @media (max-width: 600px) {
     font-size: 1.5rem;
   }
 `;
@@ -84,7 +84,7 @@ const CardP = styled.p`
     font-size: 1rem;
   }
 
-  @media (max-width: 436px) {
+  @media (max-width: 600px) {
     font-size: 0.8rem;
   }
 `;

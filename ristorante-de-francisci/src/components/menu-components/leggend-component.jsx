@@ -19,6 +19,10 @@ const LeggendItemsContainer = styled.div`
   grid-template-columns: repeat(5, 1fr);
   gap: 8px;
   justify-items: center;
+
+  @media(max-width: 930px) {
+    display: block;
+  }
 `;
 
 const LeggendItems = styled.div`
@@ -33,6 +37,10 @@ const LeggendSubtitle = styled.h3`
   font-weight: 500;
   text-transform: uppercase;
   margin: 8px;
+
+  @media(max-width: 930px) {
+    margin: 16px;
+  }
 `;
 
 const LeggendImage = styled.img`
@@ -52,7 +60,7 @@ const renderChiliIcons = (level) => {
 function LeggendComponent() {
   return (
     <>
-      <Pictureframe $sectionWidth={"900px"} $flexDirection={"column"} $backgroundColor={"#fbfbc7"}>
+      <Pictureframe $sectionWidth={"835px"} $midWidth={"80%"} $ $flexDirection={"column"} $backgroundColor={"#fbfbc7"}>
         <LeggendTitle>Leggenda</LeggendTitle>
         <LeggendItemsContainer>
         <LeggendItems>

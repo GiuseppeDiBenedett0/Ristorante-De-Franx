@@ -90,8 +90,8 @@ function NodeDishPageComponent() {
             {dishData.name}
           </DishName>
           <DishImage
-            src={dishData.imageSrc}
-            alt={dishData.imageAlt}
+            src={dishData.imgSrc}
+            alt={dishData.imgAlt}
             $width={"350px"}
             $height={"300px"}
             $margin={"32px"}

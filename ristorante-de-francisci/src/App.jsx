@@ -32,8 +32,8 @@ function App() {
           <Route path="/contacts" element={<ContactsComponent />} />
           <Route path="menù/:idName" element={<DishPageComponent />} />
           <Route path="node/menù/:dishId" element={<NodeDishPageComponent />} />
-          <Route path="/add-dish" element={<DishForm />} />
-          <Route path="/aggiorna-piatto/:dishId" element={<PatchDishForm />} />
+          <Route path="/crea-piatto" element={<DishForm />} />
+          <Route path="/edit-piatto/:dishId" element={<PatchDishForm />} />
         </Routes>
         <FooterComponent />
       </Router>

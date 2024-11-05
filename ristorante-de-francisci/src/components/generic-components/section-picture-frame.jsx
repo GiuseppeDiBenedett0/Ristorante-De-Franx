@@ -16,11 +16,11 @@ const SectionPictureFrame = styled.div`
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 878px) {
-    width: 100%;
+    width: ${({ $midWidth }) => $midWidth || "100%"};
   }
 
   @media (max-width: 400px) {
-    width: 265px;
+    width: ${({ $minWidth }) => $minWidth || "265px"};
   }
 `;
 
@@ -33,6 +33,8 @@ const Pictureframe = React.forwardRef(
       $backgroundColor,
       $marginTop,
       $marginBottom,
+      $midWidth,
+      $minWidth
     },
     ref
   ) => {
@@ -40,6 +42,9 @@ const Pictureframe = React.forwardRef(
       <SectionPictureFrame
         ref={ref}
         $sectionWidth={$sectionWidth}
+        $midWidth={$midWidth}
+        $minWidth={$minWidth}
+
         $flexDirection={$flexDirection}
         $backgroundColor={$backgroundColor}
         $marginTop={$marginTop}

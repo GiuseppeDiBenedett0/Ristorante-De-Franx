@@ -32,7 +32,7 @@ function OurStorySection() {
               $imgWidth={sectionData.imgWidth}
               $imgHeight={sectionData.imgHeight}
               $minImgHeight={"60%"}
-              $minorImgWidth={"60%"}
+              $minorImgWidth={"70%"}
               $sectionWidth={sectionData.sectionWidth}
               $flexDirection={sectionData.flexDirection}
             />

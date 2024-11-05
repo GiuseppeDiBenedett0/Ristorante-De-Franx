@@ -1,10 +1,10 @@
+import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import styled from "styled-components";
 import { theme } from "../style/theme";
-import { Link } from "react-router-dom";
 
 const CustomNavbar = styled(Navbar)`
   background-color: ${theme.colors.primary};
@@ -122,7 +122,7 @@ function NavbarComponent() {
             <CustomNavLink className="px-4 py-3" as={Link} to="/contacts">
               Contatti
             </CustomNavLink>
-            <CustomNavLink className="px-4 py-3" as={Link} to="/add-dish">
+            <CustomNavLink className="px-4 py-3" as={Link} to="/crea-piatto">
               Aggiungi piatto
             </CustomNavLink>
           </Nav>

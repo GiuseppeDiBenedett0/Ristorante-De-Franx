@@ -1,6 +1,7 @@
 import Dish from "../models/dish.js";
+import Contact from "../models/contact.js";
 
-export const getDish = async (req, res) => {
+export const getDishes = async (req, res) => {
   try {
     const dish = await Dish.findAll();
 
@@ -78,6 +79,35 @@ export const deleteDish = async (req, res) => {
     });
     res.json({
       message: "Piatto eliminato",
+    });
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
+};
+
+export const getContacts = async (req, res) => {
+  try {
+    const contacts = await Contact.findAll();
+
+    if (contacts.length > 0) {
+      res.send(contacts);
+    } else {
+      res.status(404).send("Nessun contatto trovato");
+    }
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
+};
+
+export const postContact = async (req, res) => {
+  try {
+    const contact = await Contact.create(req.body);
+    console.log(req.body);
+    res.json({
+      message: "Contatto crato",
+      data: contact,
     });
   } catch (err) {
     console.log(err);
