@@ -85,14 +85,14 @@ function FooterComponent() {
               <img src={xIcon} alt="Seguici su X" />
             </IconLink>
             <IconLink
-              href="https://x.com"
+              href="https://www.facebook.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img src={facebookIcon} alt="Seguici su Facebook" />
             </IconLink>
             <IconLink
-              href="https://x.com"
+              href="https://www.instagram.com/"
               target="_blank"
               rel="noopener noreferrer"
             >

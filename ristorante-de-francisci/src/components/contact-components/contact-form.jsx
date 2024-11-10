@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import { theme } from "../../style/theme";
+import { fadeIn } from "../../style/animation";
 import Pictureframe from "../generic-components/section-picture-frame";
 
 const FormTitle = styled.h1`
@@ -108,17 +110,40 @@ const FormCheckbox = styled.input.attrs({ type: "checkbox" })`
   height: 27px;
 `;
 
-const ValidDiv = styled.div`
+const StyledValidDiv = styled(motion.div)`
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 140px;
   display: flex;
-  justify-content: end;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 `;
+
+const ValidDiv = ({ isVisible, children }) => (
+  <AnimatePresence>
+    {isVisible && (
+      <StyledValidDiv
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 2 }}
+      >
+        {children}
+      </StyledValidDiv>
+    )}
+  </AnimatePresence>
+);
 
 const ValidForm = styled.p`
   font-family: ${theme.fonts.roboto};
-  background-color: transparent;
-  width: 124px;
-  color: ${theme.colors.secondary};
-  border: 1px solid ${theme.colors.secondary};
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  background-color: #acacac;
+  border-radius: 15px;
+  padding: 40px;
   text-align: center;
   margin: 0;
 `;
@@ -142,24 +167,33 @@ function ContactsForm() {
     consent: false,
   });
 
+  const [isVisible, setIsVisible] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
+
+    if (name === "phone") {
+      const numericValue = value.replace(/\D/g, "");
+      setFormData({
+        ...formData,
+        [name]: numericValue,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: type === "checkbox" ? checked : value,
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Dati inviati:", formData);
     try {
       await axios.post(`http://localhost:5000/api/contact`, formData);
       console.log("Form compilato con successo");
-      setSuccessMessage("Form inviato!");
+      setSuccessMessage("Contatto inviato con successo!");
       setErrorMessage("");
 
       setFormData({
@@ -172,9 +206,34 @@ function ContactsForm() {
     } catch (err) {
       console.error(`Errore durante la compilazione del form`, err);
       setSuccessMessage("");
-      setErrorMessage("Errore durante l'invio del form.");
+      setErrorMessage("Errore durante l'invio del contatto.");
     }
   };
+
+  const fakeSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Form compilato con successo", formData);
+    setSuccessMessage("Contatto inviato con successo!");
+    setErrorMessage("");
+    setIsVisible(true);
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      consent: false,
+    });
+  };
+
+  useEffect(() => {
+    if (isVisible) {
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible]);
 
   return (
     <>
@@ -185,7 +244,7 @@ function ContactsForm() {
         $marginBottom={"40px"}
         $backgroundColor={theme.colors.primary}
       >
-        <FormSection onSubmit={handleSubmit}>
+        <FormSection onSubmit={fakeSubmit}>
           <FormTitle>Contattaci per sapere di più!</FormTitle>
           <FormDivStyle>
             <FormLabel htmlFor="name"></FormLabel>
@@ -256,7 +315,7 @@ function ContactsForm() {
           <FormDivStyle>
             <FormButton type="submit">Invia</FormButton>
           </FormDivStyle>
-          <ValidDiv>
+          <ValidDiv isVisible={isVisible}>
             {successMessage && <ValidForm>{successMessage}</ValidForm>}{" "}
             {errorMessage && <InvalidForm>{errorMessage}</InvalidForm>}{" "}
           </ValidDiv>

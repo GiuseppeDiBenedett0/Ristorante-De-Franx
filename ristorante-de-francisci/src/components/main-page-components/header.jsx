@@ -3,6 +3,7 @@ import { theme } from "../../style/theme";
 import { fadeInImage } from "../../style/animation";
 import { fadeIn } from "../../style/animation";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const HeaderContainer = styled.div`
   position: relative;
@@ -24,18 +25,29 @@ const HeaderContainer = styled.div`
   }
 `;
 
-const HeaderImage = styled.img`
+const StyledHeaderImage = styled(motion.img)`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: ${fadeInImage} 2s linear;
   filter: brightness(50%);
 `;
 
-const HeaderTitle = styled.h1`
+const HeaderImage = ({ src, alt }) => (
+  <AnimatePresence>
+    <StyledHeaderImage
+      src={src}
+      alt={alt}
+      initial={{ opacity: 0.3 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2 }}
+    />
+  </AnimatePresence>
+);
+
+const StyledHeaderTitle = styled(motion.h1)`
   font-family: ${theme.fonts.playfair};
   position: absolute;
   top: 35%;
@@ -45,16 +57,13 @@ const HeaderTitle = styled.h1`
   text-transform: uppercase;
   font-size: 6rem;
   text-align: center;
-  letter-spacing: 8px;
   white-space: nowrap;
-  animation: ${fadeIn} 2s linear;
-  animation-delay: 1s;
-  animation-fill-mode: backwards;
   line-height: 1.3;
   text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black,
     -1px 1px 0 black;
+  animation-fill-mode: backwards;
 
-    @media (max-width: 1030px) {
+  @media (max-width: 1030px) {
     font-size: 4rem;
   }
 
@@ -72,7 +81,19 @@ const HeaderTitle = styled.h1`
   }
 `;
 
-const HeaderSubTitle = styled.h3`
+const HeaderTitle = ({ children }) => (
+  <AnimatePresence>
+    <StyledHeaderTitle
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2, delay: 1.5 }}
+    >
+      {children}
+    </StyledHeaderTitle>
+  </AnimatePresence>
+);
+
+const StyledHeaderSubTitle = styled(motion.h3)`
   font-family: "Playfair Display", sans-serif;
   font-size: 2.2rem;
   font-style: italic;
@@ -84,8 +105,6 @@ const HeaderSubTitle = styled.h3`
   text-align: center;
   letter-spacing: 4px;
   white-space: nowrap;
-  animation: ${fadeIn} 2s linear;
-  animation-delay: 3s;
   animation-fill-mode: backwards;
   text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black,
     -1px 1px 0 black;
@@ -100,7 +119,19 @@ const HeaderSubTitle = styled.h3`
   }
 `;
 
-const HeaderSubContainer = styled.div`
+const HeaderSubTitle = ({ children }) => (
+  <AnimatePresence>
+    <StyledHeaderSubTitle
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2, delay: 3 }}
+    >
+      {children}
+    </StyledHeaderSubTitle>
+  </AnimatePresence>
+);
+
+const StyledHeaderSubContainer = styled(motion.div)`
   position: absolute;
   top: 81%;
   left: 50%;
@@ -110,8 +141,6 @@ const HeaderSubContainer = styled.div`
   background-color: ${theme.colors.primary};
   box-shadow: 0px 0px 10px 15px rgba(0, 0, 0, 0.5);
   transform: translateX(-50%);
-  animation: ${fadeIn} 2s linear;
-  animation-delay: 1s;
   animation-fill-mode: backwards;
 
   @media (max-width: 1150px) {
@@ -131,13 +160,23 @@ const HeaderSubContainer = styled.div`
   }
 `;
 
-const SubHeaderP = styled.p`
+const HeaderSubContainer = ({ children }) => (
+  <AnimatePresence>
+    <StyledHeaderSubContainer
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2, delay: 4 }}
+    >
+      {children}
+    </StyledHeaderSubContainer>
+  </AnimatePresence>
+);
+
+const StyledSubHeaderP = styled(motion.p)`
   font-family: "Playfair Display", sans-serif;
   color: ${theme.colors.text};
   text-align: center;
   font-size: 1.5rem;
-  animation: ${fadeIn} 2s linear;
-  animation-delay: 1s;
   animation-fill-mode: backwards;
 
   @media (max-width: 904px) {
@@ -148,6 +187,18 @@ const SubHeaderP = styled.p`
     font-size: 1.2rem;
   }
 `;
+
+const SubHeaderP = ({ children }) => (
+  <AnimatePresence>
+    <StyledSubHeaderP
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2, delay: 4 }}
+    >
+      {children}
+    </StyledSubHeaderP>
+  </AnimatePresence>
+);
 
 function HeaderComponent({
   $heightVh,
@@ -160,7 +211,6 @@ function HeaderComponent({
   paragraph,
   showSubContainer = true,
 }) {
-
   //Regolazione della posizione del titolo e sottotitolo in base alla grandezza dello schermo.
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
