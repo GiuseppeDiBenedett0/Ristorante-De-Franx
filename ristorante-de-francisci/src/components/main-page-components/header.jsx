@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { theme } from "../../style/theme";
-import { fadeInImage } from "../../style/animation";
-import { fadeIn } from "../../style/animation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 

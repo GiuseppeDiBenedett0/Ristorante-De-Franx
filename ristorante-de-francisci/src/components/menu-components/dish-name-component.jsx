@@ -4,7 +4,7 @@ import { theme } from "../../style/theme";
 const Name = styled.h3`
   font-family: ${theme.fonts.playfair};
   color: ${theme.colors.secondary};
-  font-size: ${({$fontSize}) => $fontSize || "1.8rem"};
+  font-size: ${({$fontSize}) => $fontSize || "1.3rem"};
   text-align: ${({$textAlign}) => $textAlign || "center"};
   text-transform: uppercase;
   margin-top: ${({$marginTop}) => $marginTop || "0"};

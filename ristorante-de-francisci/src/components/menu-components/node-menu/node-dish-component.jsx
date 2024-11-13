@@ -118,6 +118,16 @@ function NodeDishComponent() {
     fetchDishes();
   }, []);
 
+  useEffect(() => {
+    if(menuData.length > 0 && window.location.hash) {
+      const elementId = window.location.hash.replace("#", "");
+      const element = document.getElementById(elementId);
+      if(element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [menuData]);
+
   const setCategories = Array.from(
     new Set(menuData.map((dish) => dish.category))
   );

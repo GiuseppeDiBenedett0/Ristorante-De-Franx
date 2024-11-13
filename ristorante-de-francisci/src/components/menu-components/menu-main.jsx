@@ -25,7 +25,7 @@ function MenùComponent() {
         title={"Il nostro"}
         titleBr={"menù"}
         subTitle={"Solo cibi freschi"}
-        subTitleBr={"....circa"}
+        subTitleBr={"...circa"}
         $heightVh={"80vh"}
         showSubContainer={false}
       />

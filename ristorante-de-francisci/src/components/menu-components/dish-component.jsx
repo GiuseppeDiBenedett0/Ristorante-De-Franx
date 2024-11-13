@@ -132,7 +132,11 @@ function DishComponent() {
                     <ButtonComponent
                       width={"120px"}
                       fontSize={"0.8rem"}
-                      to={`/menù/${dish.id}`}
+                      to={
+                        dish.name === "Lobster"
+                          ? "https://www.youtube.com/watch?v=9WXtYaHr58k"
+                          : `/menù/${dish.id}`
+                      }
                       buttonText={"Clicca"}
                     />
                   </CardBody>

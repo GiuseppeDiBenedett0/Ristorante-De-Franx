@@ -1,4 +1,27 @@
 import dish from "../assets/orkun-orcan-nHit7o0Viig-unsplash.jpg";
+import lobster from "../assets/monika-borys-kx9X93QbDBY-unsplash.jpg";
+import TagliereMisto from "../assets/vlad-melnikov-8e_HY5Lh8Ec-unsplash.jpg";
+import Cozze from "../assets/christopher-carson-Ba2tmqEZiFk-unsplash.jpg";
+import Parmigiana from "../assets/jack-shingai-uHYOKEosqmk-unsplash.jpg";
+import Bruschette from "../assets/konstantinas-ladauskas-UClE2VFapSg-unsplash.jpg";
+import MistFiner from "../assets/maxresdefault .jpg";
+import Pasta from "../assets/tadahiro-higuchi-EbzKT7CtoPE-unsplash.jpg";
+import Lasagna from "../assets/emanuel-ekstrom-flEUTTwGlJQ-unsplash.jpg";
+import Ravioli from "../assets/toa-heftiba-vqTkZZ1JtOU-unsplash.jpg";
+import PastaSgombro from "../assets/clark-douglas-k8FXgsDTm8g-unsplash.jpg";
+import Insalata from "../assets/anna-pelzer-IGfIGP5ONV0-unsplash.jpg";
+import Gamberi from "../assets/lampos-aritonang-1piilkxsqLM-unsplash.jpg";
+import PolloFritto from "../assets/gabe-pierce-qcLlJvBK3eI-unsplash.jpg";
+import Manzo from "../assets/jason-leung-O67LZfeyYBk-unsplash.jpg";
+import Cheescake from "../assets/fotografia-de-alimentos-4aYZxBN_29Q-unsplash.jpg";
+import Gelato from "../assets/american-heritage-chocolate-PWwKJLHzekk-unsplash.jpg";
+import Muffin from "../assets/agustin-ljosmyndun-9YClZQXXZPQ-unsplash.jpg";
+import Coca from "../assets/sachin-mittal-eZtXS4vlo5s-unsplash.jpg";
+import Limonata from "../assets/francesca-hotchin-p5EiqkBYIEE-unsplash.jpg";
+import Vino from "../assets/mockup-free-6tXofHh6-QU-unsplash.jpg";
+import FireBall from "../assets/deeliver-RCkipqwhoFc-unsplash.jpg";
+import w from "../assets/agustin-ljosmyndun-9YClZQXXZPQ-unsplash.jpg";
+
 
 const menuData = [
   {
@@ -6,12 +29,12 @@ const menuData = [
     dishes: [
       {
         id: 1,
-        name: "Piatto X",
-        imageSrc: dish,
-        imageAlt: "Ciao",
-        price: "12€",
-        onlyDinner: true,
-        spicy: 2,
+        name: "Tagliere misto",
+        imageSrc: TagliereMisto,
+        imageAlt: "Tagliere misto",
+        price: "27€",
+        onlyDinner: false,
+        spicy: 0,
         allergens: [],
         info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
          in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
@@ -21,20 +44,13 @@ const menuData = [
       },
       {
         id: 2,
-        name: "Piatto Y",
-        imageSrc: dish,
-        imageAlt: "Ciao",
-        price: "12€",
+        name: "Cozze",
+        imageSrc: Cozze,
+        imageAlt: "Cozze",
+        price: "52€",
         onlyDinner: false,
-        spicy: 3,
-        allergens: [
-          "Uovo",
-          "Formaggio",
-          "Paolo",
-          "Uovo",
-          "Formaggio",
-          "Paolo",
-        ],
+        spicy: 0,
+        allergens: ["Mollusco", "Pesce", "Mare", "Acqua"],
         info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
          in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
          Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
@@ -43,17 +59,13 @@ const menuData = [
       },
       {
         id: 3,
-        name: "Piatto Z",
-        imageSrc: dish,
-        imageAlt: "Ciao",
-        price: "12€",
+        name: "Parmigiana",
+        imageSrc: Parmigiana,
+        imageAlt: "Parmigiana",
+        price: "0.5€",
         onlyDinner: true,
         spicy: 1,
-        allergens: [
-          "Uovo",
-          "Formaggio",
-          "Paolo",
-        ],
+        allergens: ["Paprica", "Formaggio", "Melanzane"],
         info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
          in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
          Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
@@ -62,12 +74,12 @@ const menuData = [
       },
       {
         id: 4,
-        name: "Piatto V",
-        imageSrc: dish,
-        imageAlt: "Ciao",
-        price: "12€",
+        name: "MistFiner",
+        imageSrc: MistFiner,
+        imageAlt: "MistFiner",
+        price: "200€",
         onlyDinner: false,
-        spicy: 2,
+        spicy: 3,
         allergens: [],
         info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
          in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
@@ -77,17 +89,13 @@ const menuData = [
       },
       {
         id: 5,
-        name: "Piatto U",
-        imageSrc: dish,
-        imageAlt: "Ciao",
-        price: "12€",
+        name: "Bruschette",
+        imageSrc: Bruschette,
+        imageAlt: "Bruschette",
+        price: "48€",
         onlyDinner: false,
-        spicy: 2,
-        allergens: [
-          "Uovo",
-          "Formaggio",
-          "Paolo",
-        ],
+        spicy: 0,
+        allergens: [],
         info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
          in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
          Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
@@ -101,9 +109,9 @@ const menuData = [
     dishes: [
       {
         id: 6,
-        name: "Piatto 1",
-        imageSrc: dish,
-        imageAlt: "Ciao",
+        name: "Pasta al sugo",
+        imageSrc: Pasta,
+        imageAlt: "Pasta",
         price: "12€",
         onlyDinner: false,
         spicy: 3,
@@ -116,17 +124,13 @@ const menuData = [
       },
       {
         id: 7,
-        name: "Piatto 2",
-        imageSrc: dish,
-        imageAlt: "Ciao",
+        name: "Lasagna",
+        imageSrc: Lasagna,
+        imageAlt: "Lasagna",
         price: "12€",
         onlyDinner: true,
         spicy: 3,
-        allergens: [
-          "Uovo",
-          "Formaggio",
-          "Paolo",
-        ],
+        allergens: ["Uovo", "Formaggio", "Paolo"],
         info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
          in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
          Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
@@ -135,17 +139,13 @@ const menuData = [
       },
       {
         id: 8,
-        name: "Piatto 3",
+        name: "Pizza De Francisci",
         imageSrc: dish,
         imageAlt: "Ciao",
         price: "12€",
         onlyDinner: true,
         spicy: 1,
-        allergens: [
-          "Uovo",
-          "Formaggio",
-          "Paolo",
-        ],
+        allergens: ["Uovo", "Formaggio", "Paolo"],
         info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
          in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
          Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
@@ -154,17 +154,13 @@ const menuData = [
       },
       {
         id: 9,
-        name: "Piatto 4",
-        imageSrc: dish,
-        imageAlt: "Ciao",
+        name: "Ravioli",
+        imageSrc: Ravioli,
+        imageAlt: "Ravioli",
         price: "12€",
         onlyDinner: true,
         spicy: 2,
-        allergens: [
-          "Uovo",
-          "Formaggio",
-          "Paolo",
-        ],
+        allergens: ["Uovo", "Formaggio", "Paolo"],
         info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
          in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
          Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
@@ -173,9 +169,9 @@ const menuData = [
       },
       {
         id: 10,
-        name: "Piatto 5",
-        imageSrc: dish,
-        imageAlt: "Ciao",
+        name: "Pasta Marea",
+        imageSrc: PastaSgombro,
+        imageAlt: "PastaSgombro",
         price: "12€",
         onlyDinner: false,
         spicy: 1,
@@ -193,9 +189,9 @@ const menuData = [
     dishes: [
       {
         id: 11,
-        name: "Piatto A",
-        imageSrc: dish,
-        imageAlt: "Ciao",
+        name: "Insalatona",
+        imageSrc: Insalata,
+        imageAlt: "Insalata",
         price: "12€",
         onlyDinner: false,
         spicy: 2,
@@ -208,9 +204,9 @@ const menuData = [
       },
       {
         id: 12,
-        name: "Piatto B",
-        imageSrc: dish,
-        imageAlt: "Ciao",
+        name: "Gamberi special",
+        imageSrc: Gamberi,
+        imageAlt: "Gamberi",
         price: "12€",
         onlyDinner: true,
         spicy: 2,
@@ -223,17 +219,13 @@ const menuData = [
       },
       {
         id: 13,
-        name: "Piatto C",
-        imageSrc: dish,
-        imageAlt: "Ciao",
-        price: "12€",
+        name: "Lobster",
+        imageSrc: lobster,
+        imageAlt: "Lobster",
+        price: "???",
         onlyDinner: true,
-        spicy: 3,
-        allergens: [
-          "Uovo",
-          "Formaggio",
-          "Paolo",
-        ],
+        spicy: 0,
+        allergens: [],
         info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
          in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
          Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
@@ -242,17 +234,13 @@ const menuData = [
       },
       {
         id: 14,
-        name: "Piatto D",
-        imageSrc: dish,
-        imageAlt: "Ciao",
+        name: "Pollo fritto",
+        imageSrc: PolloFritto,
+        imageAlt: "PolloFritto",
         price: "12€",
         onlyDinner: false,
         spicy: 1,
-        allergens: [
-          "Uovo",
-          "Formaggio",
-          "Paolo",
-        ],
+        allergens: ["Uovo", "Formaggio", "Paolo"],
         info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
          in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
          Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
@@ -261,13 +249,158 @@ const menuData = [
       },
       {
         id: 15,
-        name: "Piatto E",
-        imageSrc: dish,
-        imageAlt: "Ciao",
+        name: "Manzone",
+        imageSrc: Manzo,
+        imageAlt: "Manzo",
         price: "12€",
         onlyDinner: true,
         spicy: 1,
         allergens: [],
+        info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
+         in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+         Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
+         Vestibulum dignissim luctus arcu.
+         Nam dictum eleifend eros sit amet suscipit.`,
+      },
+    ],
+  },
+  {
+    category: "Dolci",
+    dishes: [
+      {
+        id: 16,
+        name: "Cheescake",
+        imageSrc: Cheescake,
+        imageAlt: "Cheescake",
+        price: "12€",
+        onlyDinner: false,
+        spicy: 2,
+        allergens: [],
+        info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
+         in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+         Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
+         Vestibulum dignissim luctus arcu.
+         Nam dictum eleifend eros sit amet suscipit.`,
+      },
+      {
+        id: 17,
+        name: "Straciattella",
+        imageSrc: Gelato,
+        imageAlt: "Gelato",
+        price: "12€",
+        onlyDinner: true,
+        spicy: 2,
+        allergens: [],
+        info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
+         in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+         Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
+         Vestibulum dignissim luctus arcu.
+         Nam dictum eleifend eros sit amet suscipit.`,
+      },
+      {
+        id: 18,
+        name: "Broly",
+        imageSrc: lobster,
+        imageAlt: "Lobster",
+        price: "???",
+        onlyDinner: true,
+        spicy: 0,
+        allergens: [],
+        info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
+         in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+         Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
+         Vestibulum dignissim luctus arcu.
+         Nam dictum eleifend eros sit amet suscipit.`,
+      },
+      {
+        id: 19,
+        name: "Muffin",
+        imageSrc: Muffin,
+        imageAlt: "Muffin",
+        price: "12€",
+        onlyDinner: false,
+        spicy: 1,
+        allergens: ["Uovo", "Formaggio", "Paolo"],
+        info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
+         in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+         Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
+         Vestibulum dignissim luctus arcu.
+         Nam dictum eleifend eros sit amet suscipit.`,
+      },
+    ],
+  },
+  {
+    category: "Bibite",
+    dishes: [
+      {
+        id: 20,
+        name: "Coca Cola",
+        imageSrc: Coca,
+        imageAlt: "Coca",
+        price: "12€",
+        onlyDinner: false,
+        spicy: 2,
+        allergens: [],
+        info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
+         in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+         Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
+         Vestibulum dignissim luctus arcu.
+         Nam dictum eleifend eros sit amet suscipit.`,
+      },
+      {
+        id: 21,
+        name: "Limonata",
+        imageSrc: Limonata,
+        imageAlt: "Limonata",
+        price: "12€",
+        onlyDinner: true,
+        spicy: 2,
+        allergens: [],
+        info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
+         in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+         Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
+         Vestibulum dignissim luctus arcu.
+         Nam dictum eleifend eros sit amet suscipit.`,
+      },
+      {
+        id: 22,
+        name: "Vino buono",
+        imageSrc: Vino,
+        imageAlt: "Vino",
+        price: "???",
+        onlyDinner: true,
+        spicy: 0,
+        allergens: [],
+        info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
+         in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+         Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
+         Vestibulum dignissim luctus arcu.
+         Nam dictum eleifend eros sit amet suscipit.`,
+      },
+      {
+        id: 22,
+        name: "FireBall",
+        imageSrc: FireBall,
+        imageAlt: "FireBall",
+        price: "12€",
+        onlyDinner: false,
+        spicy: 1,
+        allergens: ["Uovo", "Formaggio", "Paolo"],
+        info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
+         in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+         Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 
+         Vestibulum dignissim luctus arcu.
+         Nam dictum eleifend eros sit amet suscipit.`,
+      },
+      {
+        id: 23,
+        name: "Shrekdeniels",
+        imageSrc: dish,
+        imageAlt: "Ciao",
+        price: "12€",
+        onlyDinner: false,
+        spicy: 1,
+        allergens: ["Uovo", "Formaggio", "Paolo"],
         info: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tempus nibh. Nam quis turpis rhoncus turpis placerat ultrices. Vestibulum ante ipsum primis
          in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
          Nullam suscipit pellentesque libero, non ullamcorper leo gravida cursus. Nam eu auctor eros, ut volutpat mauris. Aliquam erat volutpat. 

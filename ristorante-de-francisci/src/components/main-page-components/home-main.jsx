@@ -138,9 +138,9 @@ function HomeMainComponent() {
         subTitleBr={"per i capitani di domani"}
         paragraph={
           <>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Reprehenderit dignissimos, molestias animi provident reiciendis
-            laudantium labore officiis.
+            Rimanere stupiti è quasi un obbligo qui, alla Pirri Gentile.
+            Grandi piatti e grandi intrattenitori aspettano chi osa entrare in questo
+            luogo sacro di eterna felicità.
           </>
         }
       />
@@ -172,12 +172,14 @@ function HomeMainComponent() {
             Vieni a lavorare a <br /> Pirri!
           </CardTitle>
           <CardP>
-            Reprehenderit dignissimos, molestias animi provident reiciendis
-            laudantium labore officiis laborum amet consequuntur voluptatum
-            sequi ullam ratione doloremque blanditiis, odit hic voluptas non!
-            Reprehenderit dignissimos, molestias animi provident reiciendis
-            laudantium labore officiis laborum amet consequuntur voluptatum
-            sequi ullam ratione doloremque blanditiis, odit hic voluptas non!
+            Siamo una piccola impresa che instaurerà, con chi volesse aiutarci, un rapporto familiare.
+            La paga si saprà soltanto dopo il primo mese, per aggiungere quel brio in più alla
+            vostra avventura con noi.
+            Se desiderate unirvi a noi dovrete prima superare un test scritto e pratico, che verrà supervisionato
+            direttamente dal nostro fondatore.
+            Anche se i licenziamenti sono frequenti, non dovete avere timore. Il nostro amato fondatore
+            saprà sempre come bastonarvi una volta finito il contratto.
+
           </CardP>
           <ButtonComponent buttonText={"Visita"} to={"https://www.youtube.com/watch?v=dQw4w9WgXcQ"} width={"100%"}/>
         </WorkCard>
@@ -185,15 +187,15 @@ function HomeMainComponent() {
 
       <RatingSction>
         <RatingText>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Anche i grandi Chef mangiano da noi!
         </RatingText>
         <RatingText className="rating-value">
           Valutazione finale: 5/5
         </RatingText>
         <RatingStars src={ratingStars} alt="rating" />
         <RatingText>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum
-          dolor sit amet consectetur adipisicing elit.
+          Ambiente confortevole, privo di scarafaggi. Sorpese culinarie e bagni sempre puliti.
+          Neanche a Master Chef si mangia così bene!
         </RatingText>
       </RatingSction>
     </>

@@ -103,7 +103,7 @@ function FooterComponent() {
           <FooterP>Lorem ipsum dolor sit amet consectetur adipisicing.</FooterP>
           <FooterP>Lorem ipsum dolor sit amet consectetur adipisicing.</FooterP>
           <Separetor></Separetor>
-          <FooterP>© 2024 Lorem ipsum dolor sit amet.</FooterP>
+          <FooterP>© 2024 Daniele De Francisci Enterprise.</FooterP>
         </FooterSection>
       </FooterBody>
     </>

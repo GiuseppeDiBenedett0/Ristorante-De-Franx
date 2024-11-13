@@ -3,7 +3,6 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import { theme } from "../../style/theme";
-import { fadeIn } from "../../style/animation";
 import Pictureframe from "../generic-components/section-picture-frame";
 
 const FormTitle = styled.h1`

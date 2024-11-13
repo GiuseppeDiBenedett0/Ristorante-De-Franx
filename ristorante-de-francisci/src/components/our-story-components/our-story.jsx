@@ -14,8 +14,8 @@ function OurStoryComponent() {
         alt={"Tavolata"}
         title={"La nostra"}
         titleBr={"storia"}
-        subTitle={"E che bella storia"}
-        subTitleBr={"ragazzi"}
+        subTitle={"E che bella storia,"}
+        subTitleBr={"ragazzi!"}
         showSubContainer={false}
       />
       <OurStorySection/>
