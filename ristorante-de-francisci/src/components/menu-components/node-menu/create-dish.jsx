@@ -19,10 +19,11 @@ function DishForm() {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
+    //Limita la voce spicy a un valore compreso tra 0 e 3 e la voce price a un valore non negativo.
     const limitation =
       name === "spicy"
         ? Math.max(0, Math.min(3, Number(value)))
-        : name === "price" 
+        : name === "price"
         ? Math.max(0, Number(value))
         : value;
 

@@ -103,9 +103,10 @@ const ButtonContainer = styled.div`
 function NodeDishComponent() {
   const [menuData, setMenuData] = useState([]);
 
-  //Cambia il valore a true per attivare la modifica e l'eliminazione del piatto.
+  //Mostra i pulsanti di modifica ed eliminazione solo per gli amministratori.
   const admin = true;
 
+  //Carica i dati dei piatti dall'API all'avvio del componente.
   useEffect(() => {
     const fetchDishes = async () => {
       try {
@@ -118,6 +119,7 @@ function NodeDishComponent() {
     fetchDishes();
   }, []);
 
+  //Scorri automaticamente verso l'elemento specifico nell'URL.
   useEffect(() => {
     if(menuData.length > 0 && window.location.hash) {
       const elementId = window.location.hash.replace("#", "");
@@ -128,10 +130,12 @@ function NodeDishComponent() {
     }
   }, [menuData]);
 
+  //Estrai le categorie uniche dai piatti.
   const setCategories = Array.from(
     new Set(menuData.map((dish) => dish.category))
   );
 
+  //Raggruppa i piatti per categoria.
   const dishesByCategory = menuData.reduce((acc, dish) => {
     if (!acc[dish.category]) {
       acc[dish.category] = [];
@@ -140,6 +144,7 @@ function NodeDishComponent() {
     return acc;
   }, {});
 
+  //Elimina il piatto dal server e aggiorna i dati localmente.
   const handleDeleteDish = async (id) => {
     console.log("Eliminazione piatto con id:", id); // Aggiungi questa linea per verificare
     try {

@@ -53,10 +53,12 @@ const Paragraph = styled.p`
 `;
 
 function NodeDishPageComponent() {
+  //Estrae l'ID del piatto dalla URL tramite useParams per caricare i dati specifici di quel piatto.
   const { dishId } = useParams();
   const id = parseInt(dishId);
-  const [dishData, setDishData] = useState(0);
+  const [dishData, setDishData] = useState({});
 
+  //Carica i dati del piatto dall'API all'avvio del componente.
   useEffect(() => {
     const fetchDishById = async () => {
       try {

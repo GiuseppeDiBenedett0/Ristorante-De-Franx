@@ -100,8 +100,8 @@ function FooterComponent() {
             </IconLink>
           </IconContainer>
           <FooterSubTitle>Come disse il saggio</FooterSubTitle>
-          <FooterP>Lorem ipsum dolor sit amet consectetur adipisicing.</FooterP>
-          <FooterP>Lorem ipsum dolor sit amet consectetur adipisicing.</FooterP>
+          <FooterP>Si dice di non mettere mai troppa carne al fuoco.</FooterP>
+          <FooterP>Altrimenti rischi di incenerire il locale pazzo!</FooterP>
           <Separetor></Separetor>
           <FooterP>© 2024 Daniele De Francisci Enterprise.</FooterP>
         </FooterSection>

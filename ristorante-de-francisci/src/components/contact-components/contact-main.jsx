@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { theme } from "../../style/theme";
-import HeaderComponent from "../main-page-components/header";
+import HeaderComponent from "../header";
 import ContactsForm from "./contact-form";
-import headerImage from "../../assets/max-burger-PvyjOd6PSUo-unsplash.jpg";
+import headerImage from "../../assets/melinda-gimpel-5Ne6mMQtIdo-unsplash.jpg";
 
 const MappTitle = styled.h2`
   font-family: ${theme.fonts.playfair};

@@ -81,6 +81,8 @@ const CustomDropdownItem = styled(NavDropdown.Item)`
   }
 `;
 
+//Per visualizzare la voce per l'aggiunta del piatto, deccomentare la sessione presente sotto.
+
 function NavbarComponent() {
   return (
     <CustomNavbar expand="lg">
@@ -122,9 +124,9 @@ function NavbarComponent() {
             <CustomNavLink className="px-4 py-3" as={Link} to="/contacts">
               Contatti
             </CustomNavLink>
-            <CustomNavLink className="px-4 py-3" as={Link} to="/crea-piatto">
+            {/*<CustomNavLink className="px-4 py-3" as={Link} to="/crea-piatto">
               Aggiungi piatto
-            </CustomNavLink>
+            </CustomNavLink>*/}
           </Nav>
         </Navbar.Collapse>
       </CustomContainer>

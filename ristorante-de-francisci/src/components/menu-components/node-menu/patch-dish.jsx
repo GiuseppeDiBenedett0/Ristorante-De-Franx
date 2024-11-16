@@ -4,9 +4,13 @@ import { useParams, useNavigate } from "react-router-dom";
 import FormComponent from "./form-component";
 
 function PatchDishForm() {
+  //Estrae l'ID del piatto dalla URL tramite useParams per caricare i dati del piatto specifico.
   const { dishId } = useParams();
   const id = parseInt(dishId);
+
+  //Usa useNavigate per reindirizzare l'utente alla pagina del menù dopo l'aggiornamento.
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     category: "",
     name: "",
@@ -19,6 +23,8 @@ function PatchDishForm() {
     info: "",
   });
 
+   //Carica i dati del piatto dall'API all'avvio del componente o quando l'ID cambia.
+   //I dati caricati vengono utilizzati per precompilare il modulo.
   useEffect(() => {
     const fetchDishData = async () => {
       try {

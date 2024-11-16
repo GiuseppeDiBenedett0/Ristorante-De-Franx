@@ -35,7 +35,7 @@ const StaffData = [
                       e armonia, preparando deliziosi piatti di mare e di terra.
                       Anche se una volta ha tagliato il forno con la sua spada, gli si vuole comunque bene.
                       Si occupa in particolare di scegliere pesce di altissima qualità, mai avariato.
-                      Cucinerà a chi riuscirà a sconfiggere, in un duello all'ultimo sangue, il fondatore, dell'ottimo sushi.`,
+                      Cucinerà dell'ottimo sushi per coloro che riusciranno a sconfiggere, in un duello all'ultimo sangue, il fondatore.`,
   },
   {
     name: "Mr Kiske",

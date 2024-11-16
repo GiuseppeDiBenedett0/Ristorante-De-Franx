@@ -197,7 +197,7 @@ function FormComponent({
           </FormDivStyle>
 
           <FormDivStyle>
-            <FormLabel htmlFor="allergens">Allergeni</FormLabel>
+            <FormLabel htmlFor="allergens">Allergeni (separali con la ,)</FormLabel>
             <FormInput
               type="text"
               id="allergens"

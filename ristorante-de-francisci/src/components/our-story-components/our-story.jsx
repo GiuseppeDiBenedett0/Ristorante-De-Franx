@@ -1,5 +1,5 @@
 import Title from "./section-title";
-import HeaderComponent from "../main-page-components/header";
+import HeaderComponent from "../header";
 import OurStorySection from "./story-section";
 import StaffComponent from "./staff";
 import headerImage from "../../assets/joanna-boj-MhOoD_h90ks-unsplash.jpg";

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import HeaderComponent from "../main-page-components/header";
+import HeaderComponent from "../header";
 import DishComponent from "./dish-component";
 import NodeDishComponent from "./node-menu/node-dish-component";
 import headerImage from "../../assets/max-burger-PvyjOd6PSUo-unsplash.jpg";
@@ -17,6 +17,8 @@ function MenùComponent() {
     }
   }, [hash]);
 
+  //Deccomentare NodeDishComponent per visualizzare il menu con il backend node. Solo uno tra DishComponent e NodeDishComponent i deve rimanere deccomentato.
+
   return (
     <>
       <HeaderComponent
@@ -29,8 +31,8 @@ function MenùComponent() {
         $heightVh={"80vh"}
         showSubContainer={false}
       />
-      {<DishComponent />}
-      {/*<NodeDishComponent />*/}
+      {/*<DishComponent />*/}
+      {<NodeDishComponent />}
     </>
   );
 }

@@ -1,4 +1,5 @@
 import owner from "../assets/owner.jpeg";
+import pirri from "../assets/Pirri.jpg"
 import resturant from "../assets/jason-leung-poI7DelFiVA-unsplash.jpg";
 import johnnyModello from "../assets/johnny-di-daniele.jpg";
 
@@ -23,7 +24,7 @@ const OurStorydata = [
                         tradizionali nelle nostre cucine.`,
     width: "100%",
     images: [
-      { src: resturant, alt: "Ristorante", imgWidth: "300px", imgHeight: "190px" },
+      { src: pirri, alt: "La bella Pirri", imgWidth: "300px", imgHeight: "190px" },
       { src: resturant, alt: "Ristorante", imgWidth: "300px", imgHeight: "190px" },
     ],
     hoverImage: [],

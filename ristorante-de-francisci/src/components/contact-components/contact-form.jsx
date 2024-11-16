@@ -166,6 +166,7 @@ function ContactsForm() {
     consent: false,
   });
 
+  //Stato per mostrare il messaggio di successo o errore.
   const [isVisible, setIsVisible] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -173,6 +174,7 @@ function ContactsForm() {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
+    //Rimuove tutti i caratteri non numerici per il campo telefono.
     if (name === "phone") {
       const numericValue = value.replace(/\D/g, "");
       setFormData({
@@ -195,6 +197,7 @@ function ContactsForm() {
       setSuccessMessage("Contatto inviato con successo!");
       setErrorMessage("");
 
+      //Resetta i dati del form dopo l'invio.
       setFormData({
         name: "",
         email: "",
@@ -225,6 +228,7 @@ function ContactsForm() {
     });
   };
 
+  //Mostra il messaggio di successo per un periodo limitato.
   useEffect(() => {
     if (isVisible) {
       const timer = setTimeout(() => {

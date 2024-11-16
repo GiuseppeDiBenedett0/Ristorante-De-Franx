@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../style/theme";
-import HeaderComponent from "./header";
+import HeaderComponent from "../header";
 import Section from "../generic-components/section";
 import ImageComponent from "../generic-components/images";
 import ButtonComponent from "../generic-components/button";
