@@ -8,12 +8,16 @@ const Name = styled.h3`
   text-align: ${({$textAlign}) => $textAlign || "center"};
   text-transform: uppercase;
   margin-top: ${({$marginTop}) => $marginTop || "0"};
+
+  @media (max-width: ${({ $maxWidth }) => $maxWidth }) {
+    font-size: ${({ $midFontSize }) => $midFontSize};
+  }
 `;
 
-function DishName( {children, $textAlign, $fontSize, $marginTop} ){
+function DishName( {children, $textAlign, $fontSize, $marginTop, $maxWidth ,$midFontSize } ){
     return(
         <>
-        <Name $textAlign={$textAlign} $fontSize={$fontSize} $marginTop={$marginTop}>{ children }</Name>
+        <Name $textAlign={$textAlign} $fontSize={$fontSize} $marginTop={$marginTop} $maxWidth={$maxWidth} $midFontSize ={$midFontSize }>{ children }</Name>
         </>
     )
 }

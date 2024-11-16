@@ -31,8 +31,8 @@ function MenùComponent() {
         $heightVh={"80vh"}
         showSubContainer={false}
       />
-      {/*<DishComponent />*/}
-      {<NodeDishComponent />}
+      {<DishComponent />}
+      {/*<NodeDishComponent />*/}
     </>
   );
 }

@@ -137,7 +137,7 @@ function DishComponent() {
                           ? "https://www.youtube.com/watch?v=9WXtYaHr58k"
                           : `/menù/${dish.id}`
                       }
-                      buttonText={"Clicca"}
+                      buttonText={"Info"}
                     />
                   </CardBody>
                 </CustomCard>

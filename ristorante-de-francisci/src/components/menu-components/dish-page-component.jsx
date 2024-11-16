@@ -18,6 +18,10 @@ const SubTitle = styled.h2`
   color: ${theme.colors.secondary};
   margin-bottom: 24px;
   margin-top: 8px;
+
+  @media (max-width: 645px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const AllergenList = styled.ul`
@@ -41,6 +45,10 @@ const AllergenItem = styled.li`
 
 const ParagraphContainer = styled.div`
   width: 600px;
+
+  @media (max-width: 830px) {
+    width: 90%;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -49,6 +57,10 @@ const Paragraph = styled.p`
   font-weight: 500;
   font-family: ${theme.fonts.manrope};
   text-align: center;
+
+  @media (max-width: 830px) {
+    font-size: 1rem;
+  }
 `;
 
 function DishPageComponent() {
@@ -67,8 +79,21 @@ function DishPageComponent() {
   return (
     <>
       <MainContainer>
-        <Pictureframe $sectionWidth={"1000px"}  $flexDirection={"column"} $marginTop={"80px"} $marginBottom={"80px"}>
-          <DishName $textAlign={"justify"} $fontSize={"3rem"} $marginTop={"16px"}>
+        <Pictureframe
+          $sectionWidth={"850px"}
+          $flexDirection={"column"}
+          $marginTop={"80px"}
+          $marginBottom={"80px"}
+          $midWidth={"80%"}
+          $minWidth={"80%"}
+        >
+          <DishName
+            $textAlign={"justify"}
+            $fontSize={"3rem"}
+            $marginTop={"16px"}
+            $maxWidth={"550px"}
+            $midFontSize={"1.8rem"}
+          >
             {dish.name}
           </DishName>
           <DishImage
@@ -77,6 +102,8 @@ function DishPageComponent() {
             $width={"350px"}
             $height={"300px"}
             $margin={"32px"}
+            $mediaWidth={"200px"}
+            $mediaHeight={"200px"}
             $enableHover={false}
           />
           <SubTitle>Descrizione del piatto</SubTitle>

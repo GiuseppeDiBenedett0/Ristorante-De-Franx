@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../style/theme";
 import xIcon from "../assets/x-social-media-round-icon.svg";
-import facebookIcon from "../assets/facebook-app-round-icon.svg";
+import facebookIcon from "../../public/facebook-icon.svg";
 import instagramIcon from "../assets/black-instagram-icon.svg";
 
 const FooterBody = styled.div`
@@ -101,7 +101,7 @@ function FooterComponent() {
           </IconContainer>
           <FooterSubTitle>Come disse il saggio</FooterSubTitle>
           <FooterP>Si dice di non mettere mai troppa carne al fuoco.</FooterP>
-          <FooterP>Altrimenti rischi di incenerire il locale pazzo!</FooterP>
+          <FooterP>Altrimenti rischi di incenerire il locale, pazzo!</FooterP>
           <Separetor></Separetor>
           <FooterP>© 2024 Daniele De Francisci Enterprise.</FooterP>
         </FooterSection>

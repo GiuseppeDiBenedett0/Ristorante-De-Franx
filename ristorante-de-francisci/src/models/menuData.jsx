@@ -313,7 +313,7 @@ const menuData = [
     ],
   },
   {
-    category: "Bibite",
+    category: "Bevande",
     dishes: [
       {
         id: 20,
