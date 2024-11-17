@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <GlobalSettings />
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <NavbarComponent />
         <Routes>
           <Route path="/" element={<HomeMainComponent />} />

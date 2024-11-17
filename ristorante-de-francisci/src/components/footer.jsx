@@ -3,6 +3,8 @@ import { theme } from "../style/theme";
 import xIcon from "../assets/x-social-media-round-icon.svg";
 import facebookIcon from "../../public/facebook-icon.svg";
 import instagramIcon from "../assets/black-instagram-icon.svg";
+import myWebsiteIcon from "../assets/portfolio-svgrepo-com.svg";
+import { Link } from "react-router-dom";
 
 const FooterBody = styled.div`
   display: flex;
@@ -10,7 +12,7 @@ const FooterBody = styled.div`
   background-color: ${theme.colors.primary};
   color: ${theme.colors.text};
   width: 100%;
-  height: 320px;
+  height: 30%;
 `;
 
 const FooterSection = styled.div`
@@ -60,7 +62,7 @@ const FooterP = styled.p`
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
-  margin-top: 16px;
+  margin: 8px 8px 8px 8px;
 `;
 
 const Separetor = styled.div`
@@ -68,6 +70,10 @@ const Separetor = styled.div`
   height: 5px;
   border-top: 1px solid ${theme.colors.text};
   margin: 16px;
+`;
+
+const PortFolioLink = styled(Link)`
+  color: ${theme.colors.secondary};
 `;
 
 function FooterComponent() {
@@ -103,7 +109,13 @@ function FooterComponent() {
           <FooterP>Si dice di non mettere mai troppa carne al fuoco.</FooterP>
           <FooterP>Altrimenti rischi di incenerire il locale, pazzo!</FooterP>
           <Separetor></Separetor>
-          <FooterP>© 2024 Daniele De Francisci Enterprise.</FooterP>
+          <FooterP>
+            © 2024 Daniele De Francisci Enterprise.{" "}
+            <PortFolioLink to={"https://giuseppedibenedettoportfolio.com"}>
+              {" "}
+              Sito realizzato da Giuseppe Di Benedetto.
+            </PortFolioLink>
+          </FooterP>
         </FooterSection>
       </FooterBody>
     </>
