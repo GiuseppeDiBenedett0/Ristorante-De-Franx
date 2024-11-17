@@ -31,6 +31,10 @@ const AllergenList = styled.ul`
   text-align: center;
   gap: 16px;
   padding: 0;
+
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const AllergenItem = styled.li`
@@ -41,6 +45,10 @@ const AllergenItem = styled.li`
   border-radius: 15px;
   margin: 8px;
   padding: 8px;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const ParagraphContainer = styled.div`
