@@ -194,7 +194,7 @@ function HomeMainComponent() {
         </RatingText>
         <RatingStars src={ratingStars} alt="rating" />
         <RatingText>
-          Ambiente confortevole, privo di scarafaggi. Sorpese culinarie e bagni sempre puliti.
+          Ambiente confortevole, privo di scarafaggi. Sorprese culinarie e bagni sempre puliti.
           Neanche a Master Chef si mangia così bene!
         </RatingText>
       </RatingSction>
