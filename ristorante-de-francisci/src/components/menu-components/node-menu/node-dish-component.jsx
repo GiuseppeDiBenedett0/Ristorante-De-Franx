@@ -146,7 +146,6 @@ function NodeDishComponent() {
 
   //Elimina il piatto dal server e aggiorna i dati localmente.
   const handleDeleteDish = async (id) => {
-    console.log("Eliminazione piatto con id:", id); // Aggiungi questa linea per verificare
     try {
       await axios.delete(`http://localhost:5000/api/dish/${id}`);
       setMenuData((prevData) => prevData.filter((dish) => dish.id !== id));

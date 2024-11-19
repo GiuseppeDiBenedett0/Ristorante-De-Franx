@@ -31,9 +31,9 @@ function DishForm() {
       ...formData,
       [name]:
         name === "allergens"
-          ? value.split(",").map((item) => item.trim()) // Gestisci gli allergeni come array
+          ? value.split(",").map((item) => item.trim())
           : type === "checkbox"
-          ? checked // Gestisci il checkbox solo a cena
+          ? checked
           : limitation,
     });
   };
